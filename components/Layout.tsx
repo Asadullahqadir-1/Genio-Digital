@@ -11,18 +11,26 @@ const Layout: React.FC = () => {
       {/* Background Image Layer */}
       <div className="fixed inset-0 z-[-1]">
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2500&auto=format&fit=crop" 
-          alt="Earth from space background" 
-          className="w-full h-full object-cover opacity-90"
+          src="/images/background.jpeg" 
+          alt="GENIO Digital background" 
+          className="w-full h-full object-cover"
         />
-        {/* Overlay gradient to match the lighter top/cloudy look in designs */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-100/40 to-blue-900/30"></div>
+        {/* Overlay gradient to create depth and readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-blue-50/50 to-blue-900/40"></div>
+        
+        {/* Animated floating particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-72 h-72 bg-indigo-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
+        </div>
         
         {/* Digital Grid Overlay Effect */}
         <div 
-            className="absolute inset-0 opacity-20 pointer-events-none"
+            className="absolute inset-0 opacity-10 pointer-events-none"
             style={{
-                backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%)',
+                backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(0,0,0,0.05) 100%)',
             }}
         ></div>
       </div>

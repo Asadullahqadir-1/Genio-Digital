@@ -1,5 +1,4 @@
 import React from 'react';
-import GlassCard from '../components/GlassCard';
 import { Briefcase, Heart, Map, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 const Solutions: React.FC = () => {
@@ -7,22 +6,30 @@ const Solutions: React.FC = () => {
     {
       icon: Briefcase, 
       title: "Travel & Mobility",
-      bullets: ["Group travel", "Safety & tracking", "Agency platforms"]
+      bullets: ["Group travel", "Safety & tracking", "Agency platforms"],
+      gradient: "from-blue-600 to-blue-800",
+      borderGradient: "from-blue-400 to-blue-700"
     },
     {
       icon: Map, 
       title: "Safety & Monitoring",
-      bullets: ["GPS & tracking solutions", "Real-time monitoring", "Emergency-oriented systems"]
+      bullets: ["GPS & tracking solutions", "Real-time monitoring", "Emergency-oriented systems"],
+      gradient: "from-emerald-600 to-teal-800",
+      borderGradient: "from-emerald-400 to-teal-700"
     },
     {
       icon: ShieldCheck, 
       title: "Jobs & Workforce",
-      bullets: ["Job aggregation", "Matching & publishing", "Employer-focused tools"]
+      bullets: ["Job aggregation", "Matching & publishing", "Employer-focused tools"],
+      gradient: "from-purple-600 to-indigo-800",
+      borderGradient: "from-purple-400 to-indigo-700"
     },
     {
       icon: Heart, 
       title: "Healthcare & Services",
-      bullets: ["Patient workflows", "Data & document handling"]
+      bullets: ["Patient workflows", "Data & document handling"],
+      gradient: "from-rose-600 to-pink-800",
+      borderGradient: "from-rose-400 to-pink-700"
     }
   ];
 
@@ -37,39 +44,55 @@ const Solutions: React.FC = () => {
       </div>
 
       {/* Solutions Grid - 4 Columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         {solutions.map((sol, index) => (
-          <GlassCard key={index} delay={index * 100 + 200} className="items-center text-center !p-6 group hover:-translate-y-2">
-            <div className="w-12 h-12 rounded-lg bg-blue-900 text-white flex items-center justify-center mb-4 shadow-md group-hover:bg-blue-700 transition-colors duration-300">
-              <sol.icon size={24} className="group-hover:scale-110 transition-transform" />
+          <div 
+            key={index} 
+            className="relative group animate-scale-in"
+            style={{ animationDelay: `${index * 100 + 200}ms` }}
+          >
+            {/* Animated gradient border effect */}
+            <div className={`absolute -inset-1 bg-gradient-to-br ${sol.borderGradient} rounded-2xl opacity-60 group-hover:opacity-100 blur-sm group-hover:blur transition-all duration-500 animate-pulse`}></div>
+            
+            {/* Card content */}
+            <div className="relative glass-panel rounded-2xl p-6 flex flex-col items-center text-center h-full group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-500">
+              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${sol.gradient} text-white flex items-center justify-center mb-5 shadow-xl group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500 animate-bounce-slow`}>
+                <sol.icon size={28} strokeWidth={2} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-5 group-hover:text-blue-900 transition-colors duration-300">{sol.title}</h3>
+              <ul className="text-left w-full space-y-2.5">
+                {sol.bullets.map((bullet, idx) => (
+                  <li key={idx} className="flex items-start text-sm text-slate-700 leading-relaxed group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${idx * 50}ms` }}>
+                    <span className="mr-2.5 mt-1.5 w-2 h-2 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></span>
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-4">{sol.title}</h3>
-            <ul className="text-left w-full space-y-2">
-              {sol.bullets.map((bullet, idx) => (
-                <li key={idx} className="flex items-start text-sm text-slate-700">
-                  <span className="mr-2 mt-1 w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 group-hover:bg-blue-400 transition-colors"></span>
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </GlassCard>
+          </div>
         ))}
       </div>
 
       {/* Why Genio Section */}
       <div 
-        className="flex flex-col items-center space-y-4 mt-4 animate-fade-in-up"
+        className="flex flex-col items-center space-y-6 mt-4 animate-fade-in-up"
         style={{ animationDelay: '600ms' }}
       >
-        <h2 className="text-2xl font-bold text-slate-800">Why GENIO Solutions?</h2>
+        <h2 className="text-3xl font-bold text-slate-900 animate-float">Why GENIO Solutions?</h2>
         <div className="flex flex-wrap justify-center gap-6">
-          <div className="flex items-center gap-2 text-slate-700 bg-white/40 px-4 py-2 rounded-lg border border-white/30 backdrop-blur-sm hover:bg-white/60 transition-colors">
-            <CheckCircle2 className="text-blue-700" size={20} />
-            <span className="font-medium">Modular & scalable</span>
+          <div className="relative group animate-float" style={{ animationDelay: '0s' }}>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl opacity-60 group-hover:opacity-100 blur group-hover:blur-lg transition-all duration-500 animate-glow"></div>
+            <div className="relative flex items-center gap-3 text-slate-800 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl border border-white/40 shadow-lg group-hover:scale-110 transition-all duration-500">
+              <CheckCircle2 className="text-blue-700 group-hover:rotate-360 transition-transform duration-700" size={24} />
+              <span className="font-semibold text-lg">Modular & scalable</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-slate-700 bg-white/40 px-4 py-2 rounded-lg border border-white/30 backdrop-blur-sm hover:bg-white/60 transition-colors">
-            <CheckCircle2 className="text-blue-700" size={20} />
-            <span className="font-medium">Built on Partner-friendly architecture</span>
+          <div className="relative group animate-float" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl opacity-60 group-hover:opacity-100 blur group-hover:blur-lg transition-all duration-500 animate-glow"></div>
+            <div className="relative flex items-center gap-3 text-slate-800 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl border border-white/40 shadow-lg group-hover:scale-110 transition-all duration-500">
+              <CheckCircle2 className="text-blue-700 group-hover:rotate-360 transition-transform duration-700" size={24} />
+              <span className="font-semibold text-lg">Partner-friendly architecture</span>
+            </div>
           </div>
         </div>
       </div>

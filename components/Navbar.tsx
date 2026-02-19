@@ -31,14 +31,14 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group hover:scale-105 transition-transform duration-300">
+          <Link to="/" className="flex items-center gap-2 group hover:scale-105 transition-all duration-500">
              <div className="relative">
-                <Globe className="w-8 h-8 text-blue-900 transition-transform duration-500 group-hover:rotate-180" />
-                <div className="absolute inset-0 bg-blue-400 blur-lg opacity-40 rounded-full group-hover:opacity-60 transition-opacity"></div>
+                <Globe className="w-8 h-8 text-blue-900 transition-transform duration-700 group-hover:rotate-180 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-blue-400 blur-lg opacity-40 rounded-full group-hover:opacity-70 transition-all duration-500 animate-pulse"></div>
              </div>
              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight text-slate-900 leading-none font-sans">GENIO</span>
-                <span className="text-[10px] font-semibold tracking-[0.2em] text-slate-600 uppercase leading-none mt-1 group-hover:text-blue-700 transition-colors">Digital</span>
+                <span className="text-2xl font-bold tracking-tight text-slate-900 leading-none font-sans group-hover:text-blue-900 transition-colors duration-300">GENIO</span>
+                <span className="text-[10px] font-semibold tracking-[0.2em] text-slate-600 uppercase leading-none mt-1 group-hover:text-blue-700 transition-colors duration-300">Digital</span>
              </div>
           </Link>
 
@@ -49,9 +49,9 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors duration-200 hover:text-blue-800 hover-underline-animation ${
+                  `relative text-sm font-medium transition-all duration-300 hover:text-blue-800 hover:-translate-y-0.5 hover:scale-110 hover-underline-animation ${
                     isActive 
-                      ? 'text-blue-900 font-semibold' 
+                      ? 'text-blue-900 font-semibold scale-105' 
                       : 'text-slate-700'
                   }`
                 }
