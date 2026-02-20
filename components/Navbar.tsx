@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,17 +30,21 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group hover:scale-105 transition-all duration-500">
+           {/* Logo */}
+           <Link to="/" className="flex items-center gap-2 group hover:scale-105 transition-all duration-500">
              <div className="relative">
-                <Globe className="w-8 h-8 text-blue-900 transition-transform duration-700 group-hover:rotate-180 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-blue-400 blur-lg opacity-40 rounded-full group-hover:opacity-70 transition-all duration-500 animate-pulse"></div>
+               <img
+                src="/images/logo.jpeg"
+                alt="Genio Digital logo"
+                className="w-8 h-8 rounded-full object-cover shadow-md transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110"
+               />
+               <div className="absolute inset-0 bg-blue-400 blur-lg opacity-40 rounded-full group-hover:opacity-70 transition-all duration-500 animate-pulse"></div>
              </div>
              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight text-slate-900 leading-none font-sans group-hover:text-blue-900 transition-colors duration-300">GENIO</span>
-                <span className="text-[10px] font-semibold tracking-[0.2em] text-slate-600 uppercase leading-none mt-1 group-hover:text-blue-700 transition-colors duration-300">Digital</span>
+               <span className="text-2xl font-bold tracking-tight text-slate-900 leading-none font-sans group-hover:text-blue-900 transition-colors duration-300">GENIO</span>
+               <span className="text-[10px] font-semibold tracking-[0.2em] text-slate-600 uppercase leading-none mt-1 group-hover:text-blue-700 transition-colors duration-300">Digital</span>
              </div>
-          </Link>
+           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8">

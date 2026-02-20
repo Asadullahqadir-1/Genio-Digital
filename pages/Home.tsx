@@ -22,15 +22,13 @@ const Home: React.FC = () => {
         <div className="relative animate-scale-in">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-500 to-blue-400 opacity-30 blur-3xl rounded-full animate-pulse-slow"></div>
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-2xl rounded-full animate-float-slow"></div>
-          <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight animate-float">
-            <span className="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 bg-clip-text text-transparent drop-shadow-2xl animate-shimmer bg-[length:1000px_100%]" style={{ backgroundImage: 'linear-gradient(90deg, #1e3a8a 0%, #3b82f6 40%, #1e3a8a 60%, #3b82f6 100%)' }}>
-              GENIO
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-slate-700 via-slate-500 to-slate-700 bg-clip-text text-transparent animate-shimmer bg-[length:1000px_100%]" style={{ backgroundImage: 'linear-gradient(90deg, #334155 0%, #64748b 40%, #334155 60%, #64748b 100%)', animationDelay: '0.5s' }}>
-              DIGITAL
-            </span>
-          </h1>
+          <div className="relative animate-float">
+            <img
+              src="/images/logo.jpeg"
+              alt="Genio Digital logo"
+              className="w-56 md:w-72 lg:w-80 rounded-full object-cover shadow-2xl drop-shadow-2xl mx-auto"
+            />
+          </div>
         </div>
 
         {/* Tagline with delayed animation */}

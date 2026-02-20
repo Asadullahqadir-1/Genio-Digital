@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Globe } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,11 +14,15 @@ const Footer: React.FC = () => {
             
             {/* Logo Area */}
             <div className="flex items-center gap-2 group animate-float" style={{ animationDuration: '4s' }}>
-                <Globe className="w-6 h-6 text-white/90 group-hover:rotate-180 transition-transform duration-700" />
-                <div className="flex flex-col">
-                    <span className="text-xl font-bold tracking-tight text-white leading-none group-hover:scale-110 transition-transform duration-300">GENIO</span>
-                    <span className="text-[9px] font-semibold tracking-[0.2em] text-blue-200 uppercase leading-none mt-0.5 group-hover:text-blue-100 transition-colors duration-300">Digital</span>
-                </div>
+              <img
+                src="/images/logo.jpeg"
+                alt="Genio Digital logo"
+                className="w-6 h-6 rounded-full object-cover shadow-md group-hover:rotate-6 transition-transform duration-700"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight text-white leading-none group-hover:scale-110 transition-transform duration-300">GENIO</span>
+                <span className="text-[9px] font-semibold tracking-[0.2em] text-blue-200 uppercase leading-none mt-0.5 group-hover:text-blue-100 transition-colors duration-300">Digital</span>
+              </div>
             </div>
 
             {/* Links */}

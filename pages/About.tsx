@@ -8,6 +8,7 @@ const About: React.FC = () => {
       title: "Who We Are",
       gradient: "from-blue-600 to-blue-800",
       borderGradient: "from-blue-400 to-blue-700",
+      titleHover: "group-hover:text-blue-900",
       content: (
         <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
           <p className="font-semibold text-blue-900 text-base">GENIO DIGITAL OÜ is an innovative digital venture studio.</p>
@@ -20,6 +21,7 @@ const About: React.FC = () => {
       title: "Vision & Mission",
       gradient: "from-emerald-600 to-teal-800",
       borderGradient: "from-emerald-400 to-teal-700",
+      titleHover: "group-hover:text-blue-900",
       content: (
         <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
           <div>
@@ -38,6 +40,7 @@ const About: React.FC = () => {
       title: "Locations & Markets",
       gradient: "from-purple-600 to-indigo-800",
       borderGradient: "from-purple-400 to-indigo-700",
+      titleHover: "group-hover:text-blue-900",
       content: (
         <ul className="space-y-3 text-sm text-slate-700">
           <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Estonia (HQ)</li>
@@ -50,15 +53,16 @@ const About: React.FC = () => {
     {
       icon: Award,
       title: "Our Values",
-      gradient: "from-rose-600 to-pink-800",
-      borderGradient: "from-rose-400 to-pink-700",
+      gradient: "from-emerald-600 to-green-800",
+      borderGradient: "from-emerald-400 to-green-700",
+      titleHover: "group-hover:text-emerald-700",
       content: (
         <ul className="space-y-3 text-sm text-slate-700">
-          <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Leadership</li>
-          <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Innovation</li>
-          <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Integrity</li>
-          <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Collaboration</li>
-          <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Excellence</li>
+          <li className="flex items-center gap-2"><span className="text-emerald-600 font-bold">✓</span> Leadership</li>
+          <li className="flex items-center gap-2"><span className="text-emerald-600 font-bold">✓</span> Innovation</li>
+          <li className="flex items-center gap-2"><span className="text-emerald-600 font-bold">✓</span> Integrity</li>
+          <li className="flex items-center gap-2"><span className="text-emerald-600 font-bold">✓</span> Collaboration</li>
+          <li className="flex items-center gap-2"><span className="text-emerald-600 font-bold">✓</span> Excellence</li>
         </ul>
       )
     }
@@ -93,7 +97,7 @@ const About: React.FC = () => {
                 <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${card.gradient} flex items-center justify-center shadow-lg group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-heartbeat`}>
                   <card.icon className="text-white" size={20} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-900 transition-colors duration-300">{card.title}</h3>
+                  <h3 className={`text-lg font-bold text-slate-900 ${card.titleHover} transition-colors duration-300`}>{card.title}</h3>
               </div>
               <div className="flex-grow">
                 {card.content}
