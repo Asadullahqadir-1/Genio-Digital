@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             <img
               src="/images/logo.png"
               alt="Genio Digital logo"
-              className="w-56 md:w-72 lg:w-80 object-contain mx-auto"
+              className="w-64 md:w-80 lg:w-96 object-contain mx-auto"
             />
           </div>
         </div>

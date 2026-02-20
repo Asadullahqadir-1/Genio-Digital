@@ -13,16 +13,12 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             
             {/* Logo Area */}
-            <div className="flex items-center gap-2 group animate-float" style={{ animationDuration: '4s' }}>
+            <div className="flex items-center group animate-float" style={{ animationDuration: '4s' }}>
               <img
                 src="/images/logo.png"
                 alt="Genio Digital logo"
-                className="w-6 h-6 rounded-full object-cover shadow-md group-hover:rotate-6 transition-transform duration-700"
+                className="w-32 sm:w-36 h-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight text-white leading-none group-hover:scale-110 transition-transform duration-300">GENIO</span>
-                <span className="text-[9px] font-semibold tracking-[0.2em] text-blue-200 uppercase leading-none mt-0.5 group-hover:text-blue-100 transition-colors duration-300">Digital</span>
-              </div>
             </div>
 
             {/* Links */}
