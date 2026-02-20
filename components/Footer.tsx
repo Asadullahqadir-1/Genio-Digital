@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             {/* Logo Area */}
             <div className="flex items-center gap-2 group animate-float" style={{ animationDuration: '4s' }}>
               <img
-                src="/images/logo.jpeg"
+                src="/images/logo.png"
                 alt="Genio Digital logo"
                 className="w-6 h-6 rounded-full object-cover shadow-md group-hover:rotate-6 transition-transform duration-700"
               />

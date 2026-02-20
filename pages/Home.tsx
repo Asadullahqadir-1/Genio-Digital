@@ -24,7 +24,7 @@ const Home: React.FC = () => {
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-2xl rounded-full animate-float-slow"></div>
           <div className="relative animate-float">
             <img
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Genio Digital logo"
               className="w-56 md:w-72 lg:w-80 rounded-full object-cover shadow-2xl drop-shadow-2xl mx-auto"
             />

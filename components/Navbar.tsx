@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
            <Link to="/" className="flex items-center gap-2 group hover:scale-105 transition-all duration-500">
              <div className="relative">
                <img
-                src="/images/logo.jpeg"
+                src="/images/logo.png"
                 alt="Genio Digital logo"
                 className="w-8 h-8 rounded-full object-cover shadow-md transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110"
                />
